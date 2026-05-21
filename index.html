@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bengkel DHR - Servis Terpercaya, Harga Terjangkau</title>
+  <meta name="description"
+    content="Bengkel DHR melayani tune up, safety check, dan servis diesel terpercaya di Bandung. Teknisi berpengalaman, harga transparan, dan hasil memuaskan.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* Hero overlay */
+    .hero-section {
+      position: relative;
+      min-height: 92vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('assets/hero_bengkel.png');
+      background-size: cover;
+      background-position: center;
+      z-index: 0;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(0, 15, 40, 0.88) 0%, rgba(0, 45, 114, 0.72) 60%, rgba(0, 0, 0, 0.45) 100%);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Animated badge */
+    @keyframes pulse-glow {
+
+      0%,
+      100% {
+        box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.5);
+      }
+
+      50% {
+        box-shadow: 0 0 16px 6px rgba(0, 123, 255, 0.25);
+      }
+    }
+
+    .badge-glow {
+      animation: pulse-glow 2.5s ease-in-out infinite;
+    }
+
+    /* Stat number */
+    .stat-card {
+      backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    /* Section title underline */
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 56px;
+      height: 4px;
+      background: linear-gradient(90deg, #007BFF, #002D72);
+      border-radius: 2px;
+      margin: 10px auto 0;
+    }
+
+    /* Card hover lift */
+    .service-card {
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0, 45, 114, 0.15);
+    }
+
+    /* Feature pill */
+    .feature-pill {
+      background: linear-gradient(135deg, #f0f6ff, #e8f0fe);
+      border-left: 3px solid #007BFF;
+    }
+
+    /* Booking CTA strip */
+    .cta-strip {
+      background: linear-gradient(135deg, #002D72 0%, #007BFF 100%);
+    }
+
+    /* WhatsApp button */
+    .btn-wa-main {
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn-wa-main:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+    }
+
+    .btn-booking-card {
+      background: linear-gradient(135deg, #002D72, #007BFF);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn-booking-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0, 123, 255, 0.4);
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50 text-gray-900">
+
+  <!-- ===== NAVBAR ===== -->
+  <nav
+    class="bg-[#002D72] text-white px-4 py-3 md:px-6 md:py-4 flex items-center justify-between sticky top-0 z-50 shadow-lg">
+    <div class="flex items-center space-x-2 md:space-x-3">
+      <img src="assets/Logo Bengkel DHR.jpeg" alt="Bengkel DHR Logo"
+        class="h-8 w-8 md:h-10 md:w-10 rounded-full object-cover ring-2 ring-blue-400">
+      <span class="text-base md:text-xl font-bold tracking-wide">Bengkel <span class="text-blue-400">DHR</span></span>
+    </div>
+    <a href="https://wa.me/6285852196195" target="_blank"
+      class="btn-wa-main text-white font-bold py-2 px-3 md:px-5 rounded-full text-sm shadow-lg flex items-center gap-2">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+        <path
+          d="M11.999 2C6.477 2 2 6.477 2 12c0 1.89.525 3.654 1.438 5.162L2 22l4.984-1.409A9.953 9.953 0 0011.999 22C17.522 22 22 17.523 22 12S17.522 2 11.999 2zm0 18.18a8.155 8.155 0 01-4.164-1.14l-.299-.178-3.094.874.874-3.093-.194-.309A8.154 8.154 0 013.82 12c0-4.51 3.67-8.18 8.18-8.18 4.51 0 8.18 3.67 8.18 8.18s-3.67 8.18-8.181 8.18z" />
+      </svg>
+      <span class="hidden sm:inline">Booking via WhatsApp</span>
+      <span class="sm:hidden">Booking</span>
+    </a>
+  </nav>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section class="hero-section px-6 md:px-16 lg:px-24 py-20">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+
+    <div
+      class="hero-content w-full max-w-6xl flex flex-col md:flex-row-reverse items-center md:items-start gap-8 lg:gap-16 justify-between">
+
+      <!-- Hero Logo -->
+      <img src="assets/Logo Bengkel DHR.jpeg" alt="Bengkel DHR Logo"
+        class="w-32 h-32 md:w-56 md:h-56 lg:w-72 lg:h-72 rounded-full object-cover shadow-[0_0_40px_rgba(0,123,255,0.3)] ring-4 md:ring-8 ring-white/10 flex-shrink-0 mt-4 md:mt-0">
+
+      <!-- Text Content -->
+      <div class="flex-1 text-center md:text-left flex flex-col items-center md:items-start">
+
+        <!-- Heading -->
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-5">
+          Bengkel <span class="text-blue-400">DHR</span><br>
+          <span class="text-3xl md:text-4xl lg:text-5xl font-bold text-blue-200">Solusi Tepat untuk Kendaraan
+            Anda</span>
+        </h1>
+
+        <!-- Subheading -->
+        <p class="text-gray-300 text-lg md:text-xl leading-relaxed mb-8 max-w-2xl">
+          Kami hadir dengan teknisi berpengalaman, peralatan memadai, dan pelayanan jujur. Memastikan kendaraan Anda
+          kembali prima tanpa biaya tersembunyi.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 mb-12 w-full sm:w-auto">
+          <a href="https://wa.me/6285852196195?text=Halo%20Bengkel%20DHR%2C%20saya%20ingin%20booking%20servis"
+            target="_blank"
+            class="btn-wa-main text-white font-bold py-3.5 px-8 rounded-full text-base shadow-xl flex items-center justify-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+              <path
+                d="M11.999 2C6.477 2 2 6.477 2 12c0 1.89.525 3.654 1.438 5.162L2 22l4.984-1.409A9.953 9.953 0 0011.999 22C17.522 22 22 17.523 22 12S17.522 2 11.999 2zm0 18.18a8.155 8.155 0 01-4.164-1.14l-.299-.178-3.094.874.874-3.093-.194-.309A8.154 8.154 0 013.82 12c0-4.51 3.67-8.18 8.18-8.18 4.51 0 8.18 3.67 8.18 8.18s-3.67 8.18-8.181 8.18z" />
+            </svg>
+            Booking Sekarang
+          </a>
+          <button onclick="document.getElementById('paket-layanan').scrollIntoView({behavior:'smooth'})"
+            class="bg-white/10 border border-white/30 text-white font-bold py-3.5 px-8 rounded-full text-base hover:bg-white/20 transition text-center cursor-pointer">
+            Lihat Paket Servis ↓
+          </button>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <!-- <div class="flex flex-wrap gap-4">
+        <div class="stat-card rounded-2xl px-5 py-3 text-center">
+          <div class="text-2xl font-black text-white">5+</div>
+          <div class="text-xs text-gray-300 font-medium">Tahun Pengalaman</div>
+        </div>
+        <div class="stat-card rounded-2xl px-5 py-3 text-center">
+          <div class="text-2xl font-black text-white">500+</div>
+          <div class="text-xs text-gray-300 font-medium">Kendaraan Ditangani</div>
+        </div>
+        <div class="stat-card rounded-2xl px-5 py-3 text-center">
+          <div class="text-2xl font-black text-white">100%</div>
+          <div class="text-xs text-gray-300 font-medium">Garansi Kepuasan</div>
+        </div>
+      </div> -->
+    </div>
+  </section>
+
+  <!-- ===== FITUR UNGGULAN ===== -->
+  <section class="bg-white py-14 px-6 md:px-16 border-t border-gray-100">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-xl md:text-2xl font-bold text-[#002D72] mb-2">Mengapa Memilih Bengkel DHR?</h2>
+      <p class="text-gray-500 text-sm mb-10">Kami hadir langsung ke lokasi Anda dengan cepat, jelas, dan bisa
+        diandalkan.</p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-8">
+
+        <div class="flex items-start gap-4">
+          <div class="mt-0.5 flex-shrink-0 w-9 h-9 rounded-lg bg-blue-50 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-600" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-semibold text-gray-900 text-base mb-1">Teknisi Berpengalaman</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">Ditangani langsung oleh mekanik yang sudah terbiasa
+              menangani berbagai merek dan tipe kendaraan.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4">
+          <div class="mt-0.5 flex-shrink-0 w-9 h-9 rounded-lg bg-blue-50 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-600" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-semibold text-gray-900 text-base mb-1">Harga yang Jelas</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">Biaya diinformasikan sebelum pekerjaan dimulai. Tidak ada
+              tambahan biaya yang tidak disetujui.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4">
+          <div class="mt-0.5 flex-shrink-0 w-9 h-9 rounded-lg bg-blue-50 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-600" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-semibold text-gray-900 text-base mb-1">Datang ke Lokasi Anda</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">Tidak perlu repot ke bengkel. Kami yang datang ke rumah
+              atau kantor sesuai jadwal yang Anda tentukan.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4">
+          <div class="mt-0.5 flex-shrink-0 w-9 h-9 rounded-lg bg-blue-50 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-600" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-semibold text-gray-900 text-base mb-1">Alat Diagnostik Modern</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">Dilengkapi scanner OBD untuk membaca kondisi kendaraan
+              secara akurat sebelum dan sesudah servis.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TENTANG KAMI ===== -->
+  <section class="bg-gray-50 py-14 px-6 md:px-16">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-2xl md:text-3xl font-black text-[#002D72] section-title mb-8">Tentang Bengkel DHR</h2>
+      <p class="text-gray-600 text-base md:text-lg leading-relaxed mb-6">
+        Bengkel DHR adalah bengkel otomotif modern yang berfokus pada kualitas pengerjaan dan kepercayaan pelanggan.
+        Sejak berdiri, kami telah melayani ratusan pemilik kendaraan dengan standar servis yang terus kami tingkatkan
+        setiap harinya.
+      </p>
+      <p class="text-gray-600 text-base md:text-lg leading-relaxed">
+        Kami tidak sekadar memperbaiki mesin, kami menjaga performa kendaraan Anda agar tetap optimal di setiap kondisi
+        jalan. Dengan pendekatan yang jujur dan profesional, kepuasan Anda adalah prioritas utama kami.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== CTA STRIP + BOOKING BUTTON ===== -->
+  <section class="cta-strip py-10 px-6 text-center" id="paket-layanan">
+    <p class="text-blue-200 font-semibold text-sm uppercase tracking-widest mb-2">Paket Lengkap, Harga Bersahabat</p>
+    <h2 class="text-2xl md:text-4xl font-black text-white mb-4">Pilih Paket Servis Terbaik untuk Kendaraan Anda</h2>
+    <p class="text-blue-100 max-w-xl mx-auto text-base mb-8">Tersedia berbagai paket perawatan dari mesin bensin hingga
+      diesel, dirancang untuk menjaga kendaraan Anda tetap bertenaga dan irit bahan bakar.</p>
+    <a href="https://wa.me/6285852196195?text=Halo%20Bengkel%20DHR%2C%20saya%20ingin%20booking%20servis" target="_blank"
+      class="btn-wa-main inline-flex items-center gap-2 text-white font-bold py-3.5 px-10 rounded-full text-base shadow-2xl">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+        <path
+          d="M11.999 2C6.477 2 2 6.477 2 12c0 1.89.525 3.654 1.438 5.162L2 22l4.984-1.409A9.953 9.953 0 0011.999 22C17.522 22 22 17.523 22 12S17.522 2 11.999 2zm0 18.18a8.155 8.155 0 01-4.164-1.14l-.299-.178-3.094.874.874-3.093-.194-.309A8.154 8.154 0 013.82 12c0-4.51 3.67-8.18 8.18-8.18 4.51 0 8.18 3.67 8.18 8.18s-3.67 8.18-8.181 8.18z" />
+      </svg>
+      Booking via WhatsApp Sekarang
+    </a>
+  </section>
+
+  <!-- ===== PAKET LAYANAN ===== -->
+  <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6 md:px-16 py-14 bg-gray-50">
+
+    <!-- Card Paket Safety Toyota & All Brand -->
+    <div class="service-card border border-gray-200 rounded-2xl shadow-md flex flex-col overflow-hidden bg-white">
+      <div class="relative">
+        <img src="assets/toyota_safety.png" alt="Paket Safety Toyota & All Brand" class="w-full h-52 object-cover">
+        <!-- <span class="absolute top-3 left-3 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full">Honda</span> -->
+      </div>
+      <div class="p-5 flex-1">
+        <h3 class="text-lg font-black text-[#002D72] mb-1">Paket Safety Toyota & All Brand</h3>
+        <p class="text-gray-500 text-sm mb-3">Perawatan menyeluruh khusus kendaraan Toyota & All Brand, dari mesin
+          hingga sistem rem, semua dicek dan dibersihkan.</p>
+        <span class="text-blue-600 font-black text-2xl block mb-3">Rp 600.000</span>
+        <ul class="text-gray-600 text-sm space-y-1.5 mb-4">
+          <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> Tune up mesin</li>
+          <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> Gurah ruang bakar</li>
+          <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> Cleaning Injector</li>
+          <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> Cleaning Intake Manifold
+          </li>
+          <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> Cleaning Filter Udara +
+            Filter AC</li>
+          <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> Cleaning Rem 4 Roda</li>
+          <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> Scan all diagnostik</li>
+          <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> Pengecekan Understell</li>
+          <li class="flex items-center gap-2"><span class="text-blue-500 font-bold">🎁</span> Free jasa ganti oli mesin
+          </li>
+        </ul>
+      </div>
+      <div class="p-5 pt-0">
+        <a href="https://wa.me/6285852196195?text=Halo%20Bengkel%20DHR%2C%20saya%20ingin%20booking%20Paket%20Safety%20Honda"
+          target="_blank"
+          class="btn-booking-card text-white font-bold py-3 px-4 rounded-full w-full text-center inline-block text-sm">
+          🛒 Booking Paket Ini
+        </a>
+      </div>
+    </div>
+
+    <!-- Card Paket Safety Honda -->
+    <div class="service-card border border-gray-200 rounded-2xl shadow-md flex flex-col overflow-hidden bg-white">
+      <div class="relative">
+        <img src="assets/honda_safety.png" alt="Paket Safety Honda" class="w-full h-52 object-cover">
+        <!-- <span class="absolute top-3 left-3 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full">Honda</span> -->
+      </div>
+      <div class="p-5 flex-1">
+        <h3 class="text-lg font-black text-[#002D72] mb-1">Paket Safety Honda</h3>
+        <p class="text-gray-500 text-sm mb-3">Perawatan menyeluruh khusus kendaraan Honda, dari mesin hingga sistem
+          rem, semua dicek dan dibersihkan.</p>
+        <span class="text-blue-600 font-black text-2xl block mb-3">Rp 650.000</span>
+        <ul class="text-gray-600 text-sm space-y-1.5 mb-4">
+          <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> Tune up mesin</li>
+          <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> Gurah ruang bakar</li>
+          <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> Cleaning throttle body
+          </li>
+          <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> Cleaning Injector</li>
+          <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> Cleaning Intake Manifold
+          </li>
+          <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> Cleaning Filter Udara +
+            Filter AC</li>
+          <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> Cleaning Rem 4 Roda</li>
+          <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> Scan all diagnostik</li>
+          <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> Pengecekan Understell</li>
+          <li class="flex items-center gap-2"><span class="text-blue-500 font-bold">🎁</span> Free jasa ganti oli mesin
+          </li>
+        </ul>
+      </div>
+      <div class="p-5 pt-0">
+        <a href="https://wa.me/6285852196195?text=Halo%20Bengkel%20DHR%2C%20saya%20ingin%20booking%20Paket%20Safety%20Honda"
+          target="_blank"
+          class="btn-booking-card text-white font-bold py-3 px-4 rounded-full w-full text-center inline-block text-sm">
+          🛒 Booking Paket Ini
+        </a>
+      </div>
+    </div>
+
+    <!-- Card Paket Safety Mazda -->
+    <div class="service-card border border-gray-200 rounded-2xl shadow-md flex flex-col overflow-hidden bg-white">
+      <div class="relative">
+        <img src="assets/mazda_safety.png" alt="Paket Safety Mazda" class="w-full h-52 object-cover">
+        <!-- <span class="absolute top-3 left-3 bg-blue-700 text-white text-xs font-bold px-3 py-1 rounded-full">Mazda</span> -->
+      </div>
+      <div class="p-5 flex-1">
+        <h3 class="text-lg font-black text-[#002D72] mb-1">Paket Safety Mazda</h3>
+        <p class="text-gray-500 text-sm mb-3">Paket perawatan lengkap untuk kendaraan Mazda termasuk cleaning intake
+          port yang wajib dilakukan secara berkala.</p>
+        <span class="text-blue-600 font-black text-2xl block mb-3">Rp 700.000</span>
+        <ul class="text-gray-600 text-sm space-y-1.5 mb-4">
+          <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> Tune up mesin</li>
+          <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> Gurah ruang bakar</li>
+          <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> Cleaning throttle body
+          </li>
+          <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> Cleaning Injector</li>
+          <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> Cleaning Intake Manifold
+          </li>
+          <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> Cleaning Intake Port</li>
+          <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> Cleaning Filter Udara +
+            Filter AC</li>
+          <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> Cleaning Rem 4 Roda</li>
+          <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> Scan all diagnostik</li>
+          <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> Pengecekan Understell</li>
+          <li class="flex items-center gap-2"><span class="text-blue-500 font-bold">🎁</span> Free jasa ganti oli mesin
+          </li>
+        </ul>
+      </div>
+      <div class="p-5 pt-0">
+        <a href="https://wa.me/6285852196195?text=Halo%20Bengkel%20DHR%2C%20saya%20ingin%20booking%20Paket%20Safety%20Mazda"
+          target="_blank"
+          class="btn-booking-card text-white font-bold py-3 px-4 rounded-full w-full text-center inline-block text-sm">
+          🛒 Booking Paket Ini
+        </a>
+      </div>
+    </div>
+
+    <!-- Card Paket Diesel Gaspoll -->
+    <div class="service-card border border-gray-200 rounded-2xl shadow-md flex flex-col overflow-hidden bg-white">
+      <div class="relative">
+        <img src="assets/diesel_gaspoll.png" alt="Paket Diesel Gaspoll" class="w-full h-52 object-cover">
+        <!-- <span
+          class="absolute top-3 left-3 bg-gray-800 text-white text-xs font-bold px-3 py-1 rounded-full">Diesel</span> -->
+      </div>
+      <div class="p-5 flex-1">
+        <h3 class="text-lg font-black text-[#002D72] mb-1">Paket Diesel Gaspoll</h3>
+        <p class="text-gray-500 text-sm mb-3">Solusi terbaik untuk mesin diesel yang mulai terasa loyo. Kembalikan
+          tenaga dan efisiensi solar kendaraan Anda.</p>
+        <span class="text-blue-600 font-black text-2xl block mb-3">Rp 650.000</span>
+        <ul class="text-gray-600 text-sm space-y-1.5 mb-4">
+          <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> Cleaning EGR</li>
+          <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> Cleaning throttle Body
+          </li>
+          <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> Penggantian Filter Solar
+            Atas</li>
+          <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> Cleaning Intake Manifold
+          </li>
+          <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> Cleaning Filter Udara +
+            Filter AC</li>
+          <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> Cleaning Rem 4 Roda</li>
+          <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> Scan all diagnostik</li>
+          <li class="flex items-center gap-2"><span class="text-blue-500 font-bold">🎁</span> Free pengecekan understell
+          </li>
+          <li class="flex items-center gap-2"><span class="text-blue-500 font-bold">🎁</span> Free jasa ganti oli mesin
+          </li>
+        </ul>
+      </div>
+      <div class="p-5 pt-0">
+        <a href="https://wa.me/6285852196195?text=Halo%20Bengkel%20DHR%2C%20saya%20ingin%20booking%20Paket%20Diesel%20Gaspoll"
+          target="_blank"
+          class="btn-booking-card text-white font-bold py-3 px-4 rounded-full w-full text-center inline-block text-sm">
+          🛒 Booking Paket Ini
+        </a>
+      </div>
+    </div>
+
+    <!-- Card Paket Tune Up LCGC -->
+    <div class="service-card border border-gray-200 rounded-2xl shadow-md flex flex-col overflow-hidden bg-white">
+      <div class="relative">
+        <img src="assets/tune_up_lcgc.png" alt="Paket Tune Up LCGC" class="w-full h-52 object-cover">
+        <!-- <span class="absolute top-3 left-3 bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-full">LCGC
+          1.2cc</span> -->
+      </div>
+      <div class="p-5 flex-1">
+        <h3 class="text-lg font-black text-[#002D72] mb-1">Paket Tune Up LCGC</h3>
+        <p class="text-gray-500 text-sm mb-3">Dirancang spesifik untuk city car 1.2cc agar tetap responsif dan irit
+          bahan bakar meski sering digunakan di perkotaan.</p>
+        <span class="text-blue-600 font-black text-2xl block mb-3">Rp 350.000</span>
+        <ul class="text-gray-600 text-sm space-y-1.5 mb-4">
+          <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> Tune Up mesin</li>
+          <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> Cleaning Intake Manifold
+          </li>
+          <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> Cleaning throttle Body
+          </li>
+          <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> Cleaning Filter Udara +
+            Filter AC</li>
+          <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> Cleaning Busi</li>
+          <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> Pengecekan Understell</li>
+          <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> Scan all diagnostik</li>
+          <li class="flex items-center gap-2"><span class="text-blue-500 font-bold">🎁</span> Free jasa ganti oli mesin
+          </li>
+        </ul>
+      </div>
+      <div class="p-5 pt-0">
+        <a href="https://wa.me/6285852196195?text=Halo%20Bengkel%20DHR%2C%20saya%20ingin%20booking%20Paket%20Tune%20Up%20LCGC"
+          target="_blank"
+          class="btn-booking-card text-white font-bold py-3 px-4 rounded-full w-full text-center inline-block text-sm">
+          🛒 Booking Paket Ini
+        </a>
+      </div>
+    </div>
+
+    <!-- Card Paket Tune Up Gold -->
+    <div class="service-card border border-gray-200 rounded-2xl shadow-md flex flex-col overflow-hidden bg-white">
+      <div class="relative">
+        <img src="assets/tune_up_gold.png" alt="Paket Tune Up Gold" class="w-full h-52 object-cover">
+        <!-- <span class="absolute top-3 left-3 bg-amber-500 text-white text-xs font-bold px-3 py-1 rounded-full">⭐ Gold
+          1.5cc+</span> -->
+      </div>
+      <div class="p-5 flex-1">
+        <h3 class="text-lg font-black text-[#002D72] mb-1">Paket Tune Up Gold</h3>
+        <p class="text-gray-500 text-sm mb-3">Paket premium untuk kendaraan 1.5cc ke atas. Performa maksimal dengan
+          penanganan menyeluruh dari teknisi terbaik kami.</p>
+        <span class="text-blue-600 font-black text-2xl block mb-3">Rp 500.000</span>
+        <ul class="text-gray-600 text-sm space-y-1.5 mb-4">
+          <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> Tune up mesin</li>
+          <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> Gurah ruang bakar</li>
+          <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> Cleaning throttle body
+          </li>
+          <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> Cleaning Injector</li>
+          <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> Cleaning Filter Udara +
+            Filter AC</li>
+          <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> Scan all diagnostik</li>
+          <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> Pengecekan Understell</li>
+          <li class="flex items-center gap-2"><span class="text-blue-500 font-bold">🎁</span> Free jasa ganti oli mesin
+          </li>
+        </ul>
+      </div>
+      <div class="p-5 pt-0">
+        <a href="https://wa.me/6285852196195?text=Halo%20Bengkel%20DHR%2C%20saya%20ingin%20booking%20Paket%20Tune%20Up%20Gold"
+          target="_blank"
+          class="btn-booking-card text-white font-bold py-3 px-4 rounded-full w-full text-center inline-block text-sm">
+          🛒 Booking Paket Ini
+        </a>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="bg-[#002D72] text-white py-10 px-6 md:px-16">
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-3">
+        <img src="assets/Logo Bengkel DHR.jpeg" alt="Bengkel DHR Logo"
+          class="h-10 w-10 rounded-full object-cover ring-2 ring-blue-400">
+        <div>
+          <div class="font-black text-lg">Bengkel <span class="text-blue-400">DHR</span></div>
+          <div class="text-blue-200 text-xs">Solusi Servis Terpercaya</div>
+        </div>
+      </div>
+      <div class="text-center text-blue-200 text-sm">
+        <p>📍 Surabaya, Jawa Timur</p>
+        <p class="mt-1">📞 <a href="https://wa.me/6285852196195" class="underline hover:text-white">+62
+            858-5219-6195</a></p>
+      </div>
+      <a href="https://wa.me/6285852196195?text=Halo%20Bengkel%20DHR%2C%20saya%20ingin%20booking%20servis"
+        target="_blank" class="btn-wa-main text-white font-bold py-3 px-7 rounded-full text-sm shadow-lg">
+        Hubungi Kami
+      </a>
+    </div>
+    <div class="border-t border-blue-800 mt-8 pt-4 text-center text-blue-300 text-xs">
+      &copy; 2026 Bengkel DHR. Semua hak dilindungi.
+    </div>
+  </footer>
+
+</body>
+
+</html>
